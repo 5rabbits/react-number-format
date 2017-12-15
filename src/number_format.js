@@ -467,12 +467,12 @@ class NumberFormat extends React.Component {
     const {format, decimalScale, fixedDecimalScale, allowEmptyFormatting} = this.props;
     let {value, isNumericString} = this.props;
 
-    if (value === undefined && allowEmptyFormatting) {
+    if (value == null && allowEmptyFormatting) {
       value = '';
     }
 
     // if value is not defined return empty string
-    if (value === undefined && !allowEmptyFormatting) return '';
+    if (value == null && !allowEmptyFormatting) return '';
 
     if (typeof value === 'number') {
       value = value.toString();
